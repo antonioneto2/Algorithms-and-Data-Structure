@@ -14,13 +14,13 @@ void preenche(Funcionario *dados, int qtd)
     int index;
     for (index = 0; index < qtd; index++)
     {
-        printf("Digite o nome do funcionario %d: ", index + 1);
+        printf("Digite o nome do funcionario %d: \n", index + 1);
         scanf(" %[^\n]s", dados[index].nome);
-        printf("Digite o salario do funcionario %d: ", index + 1);
-        scanf("%.2f", &dados[index].salario);
-        printf("Digite o cargo do funcionario %d: ", index + 1);
+        printf("Digite o salario do funcionario %d: \n", index + 1);
+        scanf(" %f", &dados[index].salario);
+        printf("Digite o cargo do funcionario %d: \n", index + 1);
         scanf(" %[^\n]s", dados[index].cargo);
-        printf("Digite o identificador do funcionario %d: ", index + 1);
+        printf("Digite o identificador do funcionario %d: \n", index + 1);
         scanf("%d", &dados[index].id);
     }
 }
@@ -31,10 +31,7 @@ void imprime(Funcionario *imprime, int qtd)
     for (index = 0; index < qtd; index++)
     {
         printf("\n");
-        printf("O nome do %d funcionario e %s \n", index + 1, imprime[index].nome);
-        printf("O salario do %d funcionario e %f \n", index + 1, imprime[index].salario);
-        printf("O cargo do %d funcionario e %s \n", index + 1, imprime[index].cargo);
-        printf("O identificador do %d funcionario e %d ", index + 1, imprime[index].id);
+        printf("Funcionario %d || Nome: %s || Salario: %.2f || Cargo: %s || Identificador: %d", index + 1, imprime[index].nome, imprime[index].salario, imprime[index].cargo, imprime[index].id);
     }
 }
 
