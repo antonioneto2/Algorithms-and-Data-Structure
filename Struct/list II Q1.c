@@ -82,4 +82,13 @@ int main()
     imprime(dados_funcionario, qtd_funcionario);
     muda_salario(dados_funcionario, qtd_funcionario);
     maior_salario(dados_funcionario, qtd_funcionario);
+
+    for (int i = 0; i < qtd_funcionario; i++)
+    {
+        free(dados_funcionario);
+    }
+
+    free(dados_funcionario);
+
+    return 0;
 }
