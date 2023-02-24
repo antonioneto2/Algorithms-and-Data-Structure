@@ -1,27 +1,30 @@
-#include <stdio.h>  //biblioteca padrão
-#include <stdlib.h> //biblioteca de alocação dinâmica
+#include <stdio.h>  //incluindo biblioteca padrão
+#include <stdlib.h> //incluindo biblioteca de alocação dinâmica
 
-int main(void)
-{ // função principal
+// incluindo função principal
+int main()
+{
 
-    int contador1, n; // declarei duas variáveis, uma para ser o contador do for, e outra para o numero de pressoas entrevistadas
+    int contador1, n; // declarando variáveis do tipo int
 
-    printf("Quantas pessoas foram entrevistadas?\n"); // imprimindo mensagem
+    printf("Quantas pessoas foram entrevistadas?\n"); // imprimindo mensagem para o usúario
     scanf("%d", &n);                                  // pedindo para o usuário um número inteiro e armazenando na variável n
 
-    char *sexo = (char *)calloc(n, sizeof(char)); // declarei a variável sexo do tipo char e aloquei dinamicamente um espaço na memória para ela
+    char *sexo = (char *)calloc(n, sizeof(char)); // declarando uma variável do tipo char e alocando dinâmicamente
 
     // testando se a alocação deu certo
     if (sexo == NULL)
     {
+        printf("ERRO!"); // Imprimindo uma mensagem de erro caso a alocação falhe
         exit(1);
     }
 
-    char *opiniao = (char *)calloc(n, sizeof(char)); // declarei a variável opiniao do tipo char e aloquei dinamicamente um espaço na memória para ela
+    char *opiniao = (char *)calloc(n, sizeof(char)); // declarando variável do tipo char e alocando dinâmicamente
 
     // testando se a alocação deu certo
     if (opiniao == NULL)
     {
+        printf("ERRO!"); // Imprimindo uma mensagem de erro caso a alocação falhe
         exit(1);
     }
 

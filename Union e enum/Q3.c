@@ -1,5 +1,7 @@
+// incluindo a biblioteca
 #include <stdio.h>
 
+// cria enum mes
 typedef enum mes
 {
     zero,
@@ -17,19 +19,20 @@ typedef enum mes
     dezembro
 } Mes;
 
-typedef struct data
+typedef struct data // cria uma struct data e renomeando
 {
     int dia;
     Mes mes;
     int ano;
 } Data;
 
+// função principal
 int main()
 {
-    Data data;
-    int mes;
+    Data data; // variável do tipo Data
+    int mes;   // variável do tipo int
 
-    printf("Informe o dia: ");
+    printf("Informe o dia: "); // pedindo e lendo o dia, mes e ano para o usuário
     scanf("%d", &data.dia);
 
     printf("Informe o mes: ");
@@ -38,6 +41,7 @@ int main()
     printf("Informe o ano: ");
     scanf("%d", &data.ano);
 
+    // caso o usuário escolha um dos itens abaixo será imprimido na tela
     switch (data.mes)
     {
     case 1:
@@ -80,4 +84,4 @@ int main()
         break;
     }
     return 0;
-}
+} // fim

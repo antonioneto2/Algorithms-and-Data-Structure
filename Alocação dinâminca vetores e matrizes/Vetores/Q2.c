@@ -8,12 +8,12 @@ int main()
     int questoes;             // declarei uma variável do tipo int para o numero das questões
     int contador1, contador2; // declarei duas variáveis do tipo int para ser os contadores para as estruturas de repetições
 
-    char *gabarito = (char *)malloc(questoes * sizeof(char)); // aloquei dinamicamente um espaço na memória para a variável gabarito do tipo char
+    char *gabarito = (char *)malloc(questoes * sizeof(char)); // alocando dinamicamente um espaço na memória para a variável gabarito do tipo char
 
     // testando se a alocação deu certo
     if (gabarito == NULL)
     {
-        printf("Erro ao alocar memória");
+        printf("Erro ao alocar memória"); // Mensagem de eero caso a alocação seja mal sucedida
         exit(1);
     }
 

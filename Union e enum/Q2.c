@@ -1,3 +1,4 @@
+// incluindo as bibliotecas
 #include <stdio.h>
 #include <string.h>
 

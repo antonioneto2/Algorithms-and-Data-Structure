@@ -2,19 +2,19 @@
 #include <stdlib.h>
 #include <string.h>
 
-#define MAX_VAGAS 20
-#define MAX_TURMAS 2
+#define MAX_VAGAS 15 // total de vagas para os alunos
+#define MAX_TURMAS 2 // total de turmas que existem
 
-struct aluno
+struct aluno // struct aluno que guarda os dados que o aluno vai ter ao realizar sua matricula em uma turma
 {
     int mat;
-    char nome[81];
+    char nome[70];
     float notas[3];
     float media;
 };
 typedef struct aluno Aluno;
 
-struct turma
+struct turma // turmas para cadastra os alunos com uma struct aluno declarada dentro do seu corpo
 {
     char id;
     int vagas;
@@ -22,9 +22,9 @@ struct turma
 };
 typedef struct turma Turma;
 
-Turma *turmas[MAX_TURMAS];
+Turma *turmas[MAX_TURMAS]; // declarando uma variável do tipo Truma
 
-void inicializa()
+void inicializa() // função para inicializar o vetor
 {
     for (int i = 0; i < MAX_TURMAS; i++)
     {
@@ -32,11 +32,11 @@ void inicializa()
     }
 }
 
-Turma *cria_turma(char id)
+Turma *cria_turma(char id) // função com um parametro que cria turma
 {
-    Turma *turma = (Turma *)malloc(sizeof(Turma));
+    Turma *turma = (Turma *)malloc(sizeof(Turma)); // alocando dinâmicamente
 
-    if (turma == NULL)
+    if (turma == NULL) // testando a alocação
     {
         exit(1);
     }
@@ -53,7 +53,7 @@ Turma *cria_turma(char id)
     return turma;
 }
 
-void matricula_aluno(Turma *turma, int mat, char *nome)
+void matricula_aluno(Turma *turma, int mat, char *nome) // função matricula
 {
     turma->vagas -= 1; // diminui a quantidade de vagas da turma
 
@@ -99,7 +99,7 @@ void lanca_notas(Turma *turma)
     }
 }
 
-void imprime_alunos(Turma *turma)
+void imprime_alunos(Turma *turma) // função que imprime a matricula, nome e media
 {
     for (int i = 0; i < MAX_VAGAS; i++)
     {
@@ -110,7 +110,7 @@ void imprime_alunos(Turma *turma)
     }
 }
 
-void imprime_turmas(Turma **turmas, int n)
+void imprime_turmas(Turma **turmas, int n) // função que imprime a turma, vagas disponiveis e lista de alunos matriculados
 {
     for (int i = 0; i < n; i++)
     {
@@ -126,9 +126,9 @@ void imprime_turmas(Turma **turmas, int n)
     }
 }
 
-Turma *procura_turma(Turma **turmas, int n, char id)
+Turma *procura_turma(Turma **turmas, int n, char id) // função do tipo Turma
 {
-    Turma *turma = (Turma *)malloc(sizeof(Turma));
+    Turma *turma = (Turma *)malloc(sizeof(Turma)); // alocando dinâmicamente
 
     if (turma == NULL)
     {
@@ -159,13 +159,14 @@ Turma *procura_turma(Turma **turmas, int n, char id)
     return turma;
 }
 
-int main(void)
+// função principal
+int main()
 {
     Turma *t = (Turma *)malloc(sizeof(Turma)); // retorna a turma que o usuario procura
 
     int op, index = 0, mat = 0; // index vai controlar o limite do vetor turmas
     char id, *nome;
-    nome = (char *)malloc(81 * sizeof(char));
+    nome = (char *)malloc(81 * sizeof(char)); // alocando dinâmicamente e imprimendp o menu para o usuário
     printf("Bem-vindo ao Programa de Gerenciamento de Turmas!\n");
     printf("Este programa gerencia as turmas ofertadas, fornecendo as funcionalidades de matricula, lancamento de notas e listagem de alunos.\n");
     printf("Autor: Heitor Claudino\tVersao: 1.0\n");
