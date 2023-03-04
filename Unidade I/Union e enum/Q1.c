@@ -29,11 +29,11 @@ int main()
     scanf("%d", (int *)&pessoa.genero); // forçando ler um inteiro
     if (pessoa.genero == 0)             // comparando com 0, se igual imprime na tela
     {
-        printf("Nome: %s | Idade: %d | Genero: Masculino ", pessoa.nome, pessoa.idade);
+        printf("Nome: %s | Idade: %d | Genero: Masculino \n", pessoa.nome, pessoa.idade);
     }
     else
     {
-        printf("Nome: %s | Idade: %d | Genero: Feminino ", pessoa.nome, pessoa.idade);
+        printf("Nome: %s | Idade: %d | Genero: Feminino \n", pessoa.nome, pessoa.idade);
     }
     return 0;
 } // fim
